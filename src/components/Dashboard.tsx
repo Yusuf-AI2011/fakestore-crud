@@ -4,8 +4,8 @@ import Sidebar from "./Sidebar";
 
 const Dashboard = () => {
   return (
-    <div>
-      <div>
+    <div className="w-[100%] h-[100vh] bg-mist-200">
+      <div className="w-[20%] h-[100vh] bg-mist-700">
         <Sidebar />
       </div>
       <div>

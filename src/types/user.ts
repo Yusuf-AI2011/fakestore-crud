@@ -7,3 +7,5 @@ export interface User {
 
 export type CreateUser = Omit<User, "id">;
 export type DeleteUser = Pick<User, "id">;
+export type PatchUserId = Pick<User, "id">;
+export type PatchUserBody = Omit<User, "id">;

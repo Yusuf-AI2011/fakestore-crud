@@ -3,6 +3,7 @@ import { useState } from "react";
 import type { CreateUser } from "../../types/user";
 import { useCreateUser } from "../../hooks/users/usePostUser";
 import toast, { Toaster } from "react-hot-toast";
+import { useRouter } from "next/navigation";
 
 const CreateUserModal = () => {
   const [userFromData, setUserFormData] = useState<CreateUser>({
@@ -11,7 +12,8 @@ const CreateUserModal = () => {
     password: "",
   });
 
-  const { createUser, error } = useCreateUser();
+  const { createUser, error, loading } = useCreateUser();
+  const router = useRouter();
 
   function HandleChange(e: any) {
     setUserFormData({
@@ -35,10 +37,14 @@ const CreateUserModal = () => {
     });
   }
 
+  const BackRouteFunction = () => {
+    router.back();
+  };
+
   return (
     <div className="">
       <Toaster position="top-center" />
-      <form className=" flex justify-center items-center p-[10px]">
+      <form className="flex justify-center items-center p-[10px]">
         <input
           name="username"
           onChange={HandleChange}
@@ -67,11 +73,14 @@ const CreateUserModal = () => {
           >
             Qo'shish
           </button>
-          <button className="w-[120px] h-[30px] border rounded-[8px]">
-            Cancel
-          </button>
         </div>
       </form>
+      <button
+        className="w-[120px] h-[30px] border rounded-[8px]"
+        onClick={BackRouteFunction}
+      >
+        Cancel
+      </button>
     </div>
   );
 };

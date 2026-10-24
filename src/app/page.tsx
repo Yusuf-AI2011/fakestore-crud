@@ -1,12 +1,9 @@
 "use client";
 import Dashboard from "@/components/Dashboard";
-import { useRouter } from "next/navigation";
 
 const page = () => {
-  const router = useRouter();
-  router.push("/main/users");
   return (
-    <div>
+    <div className="w-[100%] h-[100vh]">
       <Dashboard />
     </div>
   );

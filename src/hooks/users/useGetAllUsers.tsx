@@ -1,6 +1,6 @@
-"use client"
+"use client";
 import { useEffect, useState } from "react";
-import { getAllUsers } from "../../services/api";
+import { getAllUsers } from "../../services/apiUsers";
 import type { User } from "../../types/user";
 
 export const useGetAllUsers = () => {

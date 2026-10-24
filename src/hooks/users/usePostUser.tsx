@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { postUser } from "../../services/api";
+import { postUser } from "../../services/apiUsers";
 import type { CreateUser } from "../../types/user";
 
 export const useCreateUser = () => {

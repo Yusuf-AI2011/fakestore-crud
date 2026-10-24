@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { deleteUser } from "../../services/api";
+import { deleteUser } from "../../services/apiUsers";
 import type { DeleteUser } from "../../types/user";
 
 export const useDeleteUser = () => {
